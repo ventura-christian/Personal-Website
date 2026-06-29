@@ -1,4 +1,4 @@
-# Christian Ventura — Personal Landing Page
+# Christian Ventura >>> Personal Landing Page
 
 A personal landing page built from scratch.
 Static HTML/CSS/JS, no frameworks.
