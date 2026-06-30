@@ -33,4 +33,4 @@ The site will be live at <https://ventura-christian.github.io/cv-landing-page/>
 
 - [Email](cventura64@outlook.com)
 - [LinkedIn](https://www.linkedin.com/in/ventura-christian/)
-- [Resume](ventura-christian.github.io/HTML-Resume)
+- [Resume](https://ventura-christian.github.io/HTML-Resume/)
