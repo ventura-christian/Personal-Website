@@ -2,6 +2,8 @@
 
 Built using HTML/CSS/JavaScript and no frameworks.
 
+[Live Demo -> CLICK ME](https://ventura-christian.github.io/Personal-*Website*/)
+
 ## What This Is
 
 A multi-page static personal site with three views:
@@ -22,12 +24,6 @@ Will lean towards a retrofuturism aesthetic inspired by print poster design.
 - Tailwind CSS via Play CDN (no build step)
 - Vanilla JavaScript (IntersectionObserver for scroll reveal, no frameworks)
 - Custom CSS properties for theming
-
-## Deploying
-
-Push to GitHub and enable GitHub Pages under Settings → Pages → Deploy from branch (main, / root).
-
-The site will be live at <https://ventura-christian.github.io/cv-landing-page/>
 
 ## Contact
 
