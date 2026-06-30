@@ -2,7 +2,7 @@
 
 Built using HTML/CSS/JavaScript and no frameworks.
 
-[Live Demo -> CLICK ME](https://ventura-christian.github.io/Personal-*Website*/)
+[Live Demo -> CLICK ME](https://ventura-christian.github.io/Personal-Website/)
 
 ## What This Is
 
