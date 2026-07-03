@@ -1,42 +1,49 @@
 :root {
-  --clr-bg: #0D0D0D;
-  --clr-fg: #F0F0F0;
+  --clr-bg: #0d0d0d;
+  --clr-fg: #f0f0f0;
   --clr-muted: #606060;
-  --clr-accent: #D44C2C;
+  --clr-accent: #d44c2c;
   --clr-border: #252525;
   --clr-border-hi: #404040;
+  --clr-void: #150a12;
+  --clr-blood: #7a1420;
+  --clr-bruise: #4b2e6b;
+  --clr-toxic: #a6ff3d;
+  --clr-rot: #6b7a3a;
   --grid-px: 60px;
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
-  --bitcount: 'Bitcount';
-  --audiowide: 'Audiowide';
-  --bebasneue: 'BebasNeue';
-  --jetbrainsmono: 'JetBrainsMono';
+  --bitcount: "Bitcount";
+  --audiowide: "Audiowide";
+  --bebasneue: "BebasNeue";
+  --jetbrainsmono: "JetBrainsMono";
 }
 
 @font-face {
-  font-family: 'Bitcount';
-  src: url('../assets/fonts/BitcountSingle-VariableFont_CRSV\,ELSH\,ELXP\,slnt\,wght.ttf') format('truetype');
+  font-family: "Bitcount";
+  src: url("../assets/fonts/BitcountSingle-VariableFont_CRSV\,ELSH\,ELXP\,slnt\,wght.ttf")
+    format("truetype");
   font-weight: 100 900;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Audiowide';
-  src: url('../assets/fonts/Audiowide-Regular.ttf') format('truetype');
+  font-family: "Audiowide";
+  src: url("../assets/fonts/Audiowide-Regular.ttf") format("truetype");
   font-weight: 400;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'BebasNeue';
-  src: url('../assets/fonts/BebasNeue-Regular.ttf') format('truetype');
+  font-family: "BebasNeue";
+  src: url("../assets/fonts/BebasNeue-Regular.ttf") format("truetype");
   font-weight: 400;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'JetBrainsMono';
-  src: url('../assets/fonts/JetBrainsMono-VariableFont_wght.ttf') format('truetype');
+  font-family: "JetBrainsMono";
+  src: url("../assets/fonts/JetBrainsMono-VariableFont_wght.ttf")
+    format("truetype");
   font-weight: 100 900;
   font-display: swap;
 }
@@ -83,9 +90,224 @@ body {
   background-size: var(--grid-px) var(--grid-px);
 }
 
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  height: 200px;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    var(--clr-bruise) 50%,
+    transparent 100%
+  );
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: 150;
+  animation: scan-drift 8s linear infinite;
+}
+@keyframes scan-drift {
+  from {
+    transform: translateY(-200px);
+  }
+  to {
+    transform: translateY(100vh);
+  }
+}
+
 h1 {
-  font-family: var(--bitcount);
-  font-size: 100px;
+  font-family: var(--audiowide);
+  font-size: 5em;
+  font-width: calc(100%);
+}
+
+.cursor-blink {
+  display: inline-block;
+  width: 0.5em;
+  background: var(--clr-accent);
+  animation: blink 1s steps(1) infinite;
+}
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.hero-line {
+  opacity: 0;
+  animation: line-in 0.5s var(--ease) forwards;
+}
+.hero-line:nth-of-type(1) {
+  animation-delay: 0.1s;
+}
+.hero-line:nth-of-type(2) {
+  animation-delay: 0.4s;
+}
+.hero-line:nth-of-type(3) {
+  animation-delay: 0.7s;
+}
+.hero-line:nth-of-type(4) {
+  animation-delay: 1s;
+}
+.hero-line:nth-of-type(5) {
+  animation-delay: 1.3s;
+}
+.hero-line:nth-of-type(6) {
+  animation-delay: 1.6s;
+}
+@keyframes line-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.face-frame img {
+  animation: glitch-tick 6s ease-in-out infinite;
+}
+@keyframes glitch-tick {
+  0%,
+  96%,
+  100% {
+    filter: none;
+    transform: none;
+  }
+  97% {
+    filter: hue-rotate(90deg) saturate(2);
+    transform: translateX(2px) skewX(2deg);
+  }
+  98% {
+    filter: none;
+    transform: translateX(-2px);
+  }
+  99% {
+    filter: hue-rotate(-40deg);
+    transform: none;
+  }
+}
+
+.detail-info .block-label .prefix {
+  animation: flicker 4s ease-in-out infinite;
+}
+@keyframes flicker {
+  0%,
+  90%,
+  100% {
+    opacity: 1;
+  }
+  92% {
+    opacity: 0.3;
+  }
+  94% {
+    opacity: 1;
+  }
+  96% {
+    opacity: 0.5;
+  }
+}
+
+.placeholder {
+  animation: static-pulse 3s ease-in-out infinite;
+}
+@keyframes static-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes pulse-toxic {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 var(--clr-toxic);
+  }
+  50% {
+    box-shadow: 0 0 20px 3px var(--clr-toxic);
+  }
+}
+@keyframes pulse-bruise {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 var(--clr-bruise);
+  }
+  50% {
+    box-shadow: 0 0 20px 3px var(--clr-bruise);
+  }
+}
+@keyframes pulse-blood {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 var(--clr-blood);
+  }
+  50% {
+    box-shadow: 0 0 20px 3px var(--clr-blood);
+  }
+}
+.card-infrascope {
+  animation: pulse-toxic 3s ease-in-out infinite;
+}
+.card-sleevesanctum {
+  animation: pulse-bruise 3.4s ease-in-out infinite;
+}
+.card-vectris {
+  animation: pulse-blood 3.8s ease-in-out infinite;
+}
+
+.card-glyph {
+  position: absolute;
+  bottom: 0.6rem;
+  right: 0.6rem;
+  font-size: 0.9rem;
+  z-index: 3;
+  animation: pace 3s ease-in-out infinite alternate;
+}
+@keyframes pace {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-90px);
+  }
+}
+.card-infrascope .card-glyph {
+  color: var(--clr-toxic);
+}
+.card-sleevesanctum .card-glyph {
+  color: var(--clr-bruise);
+}
+.card-vectris .card-glyph {
+  color: var(--clr-blood);
+}
+
+.detail-img-frame.carousel {
+  position: relative;
+}
+.carousel-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  animation: carousel-cycle 16s infinite;
+}
+@keyframes carousel-cycle {
+  0%,
+  3% {
+    opacity: 0;
+  }
+  5%,
+  20% {
+    opacity: 1;
+  }
+  22%,
+  100% {
+    opacity: 0;
+  }
 }
 
 .prefix {
@@ -103,11 +325,13 @@ h1 {
   width: 100%;
   height: 100%;
   min-height: inherit;
-  background: repeating-linear-gradient(-45deg,
-      transparent,
-      transparent 8px,
-      var(--clr-border) 8px,
-      var(--clr-border) 9px);
+  background: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 8px,
+    var(--clr-border) 8px,
+    var(--clr-border) 9px
+  );
   display: flex;
   align-items: center;
   justify-content: center;
@@ -171,7 +395,7 @@ h1 {
 }
 
 .nav-box::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   top: 0;
@@ -346,15 +570,9 @@ h1 {
   overflow: hidden;
   position: relative;
   cursor: pointer;
-  transition: border-color 0.15s var(--ease), z-index 0s;
-  opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.45s var(--ease), transform 0.45s var(--ease), border-color 0.15s;
-}
-
-.gallery-card.revealed {
-  opacity: 1;
-  transform: translateY(0);
+  transition:
+    border-color 0.15s var(--ease),
+    z-index 0s;
 }
 
 .gallery-card:nth-child(odd) {
@@ -382,7 +600,11 @@ h1 {
 .card-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(13, 13, 13, 0.85) 0%, transparent 50%);
+  background: linear-gradient(
+    to top,
+    rgba(13, 13, 13, 0.85) 0%,
+    transparent 50%
+  );
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -433,7 +655,7 @@ h1 {
   position: relative;
 }
 
-.detail-img-frame+.detail-img-frame {
+.detail-img-frame + .detail-img-frame {
   border-top: none;
   margin-top: 0;
 }
@@ -522,7 +744,9 @@ h1 {
   font-size: 0.65rem;
   letter-spacing: 0.08em;
   color: var(--clr-muted);
-  transition: border-color 0.12s, color 0.12s;
+  transition:
+    border-color 0.12s,
+    color 0.12s;
 }
 
 .github-link:hover {
@@ -531,7 +755,6 @@ h1 {
 }
 
 @media (prefers-reduced-motion: reduce) {
-
   .gallery-card,
   .nav-box::before,
   .gallery-card,
@@ -542,5 +765,28 @@ h1 {
   .gallery-card {
     opacity: 1;
     transform: none;
+  }
+
+  .hero-line,
+  .face-frame img,
+  .detail-info .block-label .prefix,
+  .placeholder,
+  body::before {
+    animation: none;
+  }
+
+  .card-glyph,
+  .card-infrascope,
+  .card-sleevesanctum,
+  .card-vectris {
+    animation: none;
+  }
+
+  .carousel-slide {
+    animation: none;
+    opacity: 0;
+  }
+  .carousel-slide:first-child {
+    opacity: 1;
   }
 }

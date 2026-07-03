@@ -7,7 +7,7 @@
       name="description"
       content="christian ventura personal page, project detail"
     />
-    <title>// project page</title>
+    <title>// infrascope</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="css/style.css" />
@@ -17,6 +17,7 @@
     <span class="page-id">
       <span class="prefix">//</span>
       cv.03 &nbsp; project_infrascope
+      <span class="cursor-blink">&nbsp;</span>
     </span>
 
     <div class="detail-grid" id="detail-root">
@@ -27,28 +28,30 @@
         </span>
 
         <div id="image-stack">
-          <div class="detail-img-frame">
+          <div class="detail-img-frame carousel">
             <img
               src="assets/images/infrascope/dashboard.png"
-              alt="homepage for infrascope"
+              alt="infrascope dashboard"
+              class="carousel-slide"
+              style="animation-delay: 0s"
             />
-          </div>
-          <div class="detail-img-frame">
             <img
               src="assets/images/infrascope/feed.png"
-              alt="homepage for infrascope"
+              alt="infrascope event feed"
+              class="carousel-slide"
+              style="animation-delay: 4s"
             />
-          </div>
-          <div class="detail-img-frame">
             <img
               src="assets/images/infrascope/homepage.png"
-              alt="homepage for infrascope"
+              alt="infrascope homepage"
+              class="carousel-slide"
+              style="animation-delay: 8s"
             />
-          </div>
-          <div class="detail-img-frame">
             <img
               src="assets/images/infrascope/storage.png"
-              alt="homepage for infrascope"
+              alt="infrascope storage panel"
+              class="carousel-slide"
+              style="animation-delay: 12s"
             />
           </div>
         </div>
@@ -124,7 +127,5 @@
         </div>
       </aside>
     </div>
-
-    <script src="js/main.js"></script>
   </body>
 </html>
