@@ -285,7 +285,7 @@ h1 {
 }
 
 .cursor-blink {
-  display: inline-block;
+  display:;
   width: 0.5em;
   background: var(--clr-tag-a);
   animation: blink 1s steps(1) infinite;
@@ -379,7 +379,7 @@ h1 {
 }
 
 .topbar-link.is-active::before {
-  content: " 鬼 ";
+  content: " ⌘ ";
   color: var(--clr-accent);
 }
 
@@ -559,29 +559,26 @@ h1 {
   font-size: var(--type-mono);
   letter-spacing: 0.05em;
   padding: 0.35rem 0.7rem;
-  border: 1px solid var(--clr-border-hi);
 }
 
 .home-blurbs .blurb-chip:nth-child(1) {
-  border-color: var(--clr-tag-a);
   color: var(--clr-tag-a);
 }
 
 .home-blurbs .blurb-chip:nth-child(2) {
-  border-color: var(--clr-tag-d);
   color: var(--clr-tag-d);
 }
 
 .home-blurbs .blurb-chip:nth-child(3) {
-  border-color: var(--clr-tag-e);
   color: var(--clr-tag-e);
 }
 
 .home-tagline {
   margin-top: 2.5rem;
-  font-family: var(--audiowide);
+  font-family: var(--jetbrainsmono);
   font-size: var(--type-xl);
   color: var(--clr-fg);
+  justify-content: center;
 }
 
 .home-cta {
@@ -623,8 +620,15 @@ h1 {
 }
 
 .face-frame img {
+  object-fit: cover;
+  object-position: top center;
   filter: grayscale(1) contrast(1.15);
   animation: glitch-tick 6s ease-in-out infinite;
+}
+
+.home-photo .photo-hover {
+  object-fit: fill;
+  background: var(--clr-bg);
 }
 
 .frame-inner {
@@ -1369,7 +1373,7 @@ h1 {
 .shuffle-btn img {
   width: 50px;
   height: 44px;
-  transition: transform 0.3s var(--ease-snap);
+  transition: transform 0.2s var(--ease-snap);
 }
 
 .shuffle-prev {
@@ -1385,7 +1389,21 @@ h1 {
 
 .shuffle-go img {
   width: 80px;
-  height: 70px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.shuffle-go-enter {
+  left: calc(40% + 72px);
+  top: calc(60.5% - 3px);
+  width: 100px;
+  height: 50px;
+}
+
+.shuffle-go-enter img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .shuffle-next {
@@ -1412,7 +1430,7 @@ h1 {
 
 .shuffle-go:hover img,
 .shuffle-go:focus-visible img {
-  transform: scale(1.8);
+  transform: scale(1.2);
 }
 
 .shuffle-caption {
@@ -1579,5 +1597,212 @@ h1 {
   }
   .carousel-slide:first-child {
     opacity: 1;
+  }
+}
+
+/* ============================================
+   RESPONSIVE / NAV TOGGLE
+   Desktop styles above are the default.
+   Overrides below apply at smaller widths.
+   ============================================ */
+
+.nav-toggle-wrap,
+.nav-toggle-input,
+.nav-toggle-label {
+  display: none;
+}
+
+/* ---------- Large desktop refinements ---------- */
+@media (min-width: 1200px) {
+  .hero-frame {
+    min-height: 720px;
+  }
+}
+
+/* ---------- Small desktop (1024-1199px) ---------- */
+@media (max-width: 1199px) {
+  .hero-frame {
+    min-height: 600px;
+  }
+}
+
+/* ---------- Tablet (768-1023px) ---------- */
+@media (max-width: 1023px) {
+  .sticker-card {
+    width: 260px;
+  }
+
+  .hero-frame {
+    min-height: 560px;
+  }
+
+  .name-banner h1 {
+    font-size: clamp(2.6rem, 10vw, 6rem);
+  }
+
+  .detail-grid {
+    grid-template-columns: 1fr 320px;
+  }
+}
+
+/* ---------- Mobile (up to 767px) ---------- */
+@media (max-width: 767px) {
+  .topbar {
+    flex-wrap: wrap;
+  }
+
+  .topbar-readout {
+    display: none;
+  }
+
+  .nav-toggle-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 2.75rem;
+    height: 2.75rem;
+    margin-left: auto;
+  }
+
+  .nav-toggle-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    font-size: 1.5rem;
+    color: var(--clr-accent);
+    pointer-events: none;
+  }
+
+  .nav-toggle-input {
+    display: block;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 110;
+    margin: 0;
+  }
+
+  .nav-toggle-input:focus-visible ~ .nav-toggle-label {
+    outline: 2px solid var(--clr-focus);
+    outline-offset: 3px;
+  }
+
+  .topbar-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    background: var(--clr-bg);
+    border: 2px solid var(--clr-border-hi);
+    border-top: none;
+    padding: 0.5rem 0;
+    z-index: 105;
+  }
+
+  .topbar:has(.nav-toggle-input:checked) .topbar-nav {
+    display: flex;
+  }
+
+  .topbar-nav li {
+    width: 100%;
+  }
+
+  .topbar-link {
+    display: block;
+    padding: 0.9rem 1.5rem;
+  }
+
+  /* ---- Home / About stack single-column ---- */
+  .home-layout,
+  .about-banner,
+  .projects-banner {
+    flex-direction: column;
+  }
+
+  .home-layout .graffiti,
+  .gfx-about-1,
+  .gfx-about-2,
+  .gfx-about-3,
+  .gfx-detail-1,
+  .gfx-detail-2 {
+    display: none;
+  }
+
+  .about-tags {
+    flex-direction: column;
+  }
+
+  .info-card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .info-card:hover,
+  .info-card:focus-visible,
+  .info-card:focus-within {
+    transform: none !important;
+  }
+
+  /* ---- Projects: sticker-wall becomes a stacked list ---- */
+  .hero-frame {
+    min-height: 0;
+    overflow: visible;
+  }
+
+  .sticker-wall {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+
+  .graffiti,
+  .wall-tag,
+  .shuffle-controls,
+  .shuffle-caption {
+    display: none;
+  }
+
+  .sticker-card,
+  #focus-1:checked ~ .sticker-wall .card-infrascope,
+  #focus-2:checked ~ .sticker-wall .card-sleevesanctum,
+  #focus-3:checked ~ .sticker-wall .card-vectris {
+    position: static;
+    width: 100%;
+    transform: none;
+    animation: none;
+  }
+
+  .sticker-card:hover,
+  .sticker-card:focus-visible {
+    transform: translate(-3px, -3px);
+  }
+
+  .stamp {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  /* ---- Detail pages stack single-column ---- */
+  .detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-images {
+    border-right: none;
+    border-bottom: 1px solid var(--clr-border);
+  }
+
+  .detail-photo {
+    width: 70px;
+    height: 70px;
   }
 }
