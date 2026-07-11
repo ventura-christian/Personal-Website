@@ -7,25 +7,18 @@
       name="description"
       content="christian ventura personal page, project detail"
     />
-    <title>// sleevesanctum</title>
+    <title>// SleeveSanctum</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="css/style.css" />
   </head>
 
   <body>
-    <!-- <span class="page-id">
-      <span class="prefix">//</span>
-      cv.04 &nbsp; project_sleevesanctum
-      <span class="cursor-blink">&nbsp;</span>
-    </span> -->
-
     <div class="site-grid h-card">
       <nav class="topbar" aria-label="site">
         <a href="index.html" class="topbar-brand accent-b">
           <span class="prefix">//</span>
           cv_
-          <span class="cursor-blink">&nbsp;</span>
         </a>
 
         <div class="nav-toggle-wrap">
@@ -36,165 +29,212 @@
             aria-label="toggle navigation menu"
           />
           <label for="nav-toggle" class="nav-toggle-label" aria-hidden="true">
-            鬼
+            <img src="assets/svg-images/character/character-3-nav.svg" alt="" />
           </label>
         </div>
 
         <ul class="topbar-nav">
           <li>
-            <a href="index.html" class="topbar-link" data-idx="01">home</a>
+            <a href="index.html" class="topbar-link" data-idx="01">HOME</a>
           </li>
           <li>
-            <a href="about.html" class="topbar-link" data-idx="02">about</a>
+            <a href="about.html" class="topbar-link" data-idx="02">ABOUT</a>
           </li>
           <li>
             <a href="projects.html" class="topbar-link" data-idx="03">
-              projects
+              PROJECTS
             </a>
           </li>
         </ul>
         <span class="topbar-readout" aria-hidden="true">
-          // now_viewing &gt;&gt;&gt; sleevesanctum
+          // Now_Viewing &gt;&gt;&gt; SleeveSanctum
         </span>
       </nav>
 
-    <div class="detail-grid" id="detail-root">
-      <section class="detail-images">
-        <span class="graffiti gfx-detail-1" aria-hidden="true">
-          <img src="assets/svg-images/scribbles/scribble-03.svg" alt="" />
-        </span>
-        <span class="graffiti gfx-detail-2" aria-hidden="true">
-          <img src="assets/svg-images/character/character-02.svg" alt="" />
-        </span>
-
-        <div class="detail-photo face-frame tint-b hover-swap" tabindex="0">
-          <div class="frame-inner">
-            <img
-              src="assets/images/headshot/christian.jpg"
-              alt="christian ventura wearing black shirt in front of light background"
-              class="u-photo photo-default"
-            />
-            <img
-              src="assets/images/headshot/chin-upsidedown.jpg"
-              alt=""
-              class="u-photo photo-hover"
-              aria-hidden="true"
-            />
-          </div>
-          <span class="tape tape-left" aria-hidden="true"></span>
-          <span class="tape tape-right" aria-hidden="true"></span>
-        </div>
-
-        <span class="images-label meta-tag">
-          <span class="prefix">//</span>
-          project screenshots
-        </span>
-
-        <div id="image-stack">
-          <div class="detail-img-frame carousel">
-            <img
-              src="assets/images/sleevesanctum/sleeve-hero.png"
-              alt="sleevesanctum landing page"
-              class="carousel-slide"
-              style="animation-delay: 0s"
-            />
-            <img
-              src="assets/images/sleevesanctum/sleeve-about.png"
-              alt="sleevesanctum about section"
-              class="carousel-slide"
-              style="animation-delay: 3.2s"
-            />
-            <img
-              src="assets/images/sleevesanctum/sleeve-form.png"
-              alt="sleevesanctum record cataloging form"
-              class="carousel-slide"
-              style="animation-delay: 6.4s"
-            />
-            <img
-              src="assets/images/sleevesanctum/sleeve-carousel.png"
-              alt="sleevesanctum built-in carousel feature"
-              class="carousel-slide"
-              style="animation-delay: 9.6s"
-            />
-            <img
-              src="assets/images/sleevesanctum/sleeve-game.png"
-              alt="sleevesanctum game feature"
-              class="carousel-slide"
-              style="animation-delay: 12.8s"
-            />
-          </div>
-        </div>
-      </section>
-
-      <aside class="detail-info">
-        <a href="index.html" class="back-row">
-          <span class="prefix">←</span>
-          home
-        </a>
-
-        <a href="projects.html" class="back-row">
-          <span class="prefix">←</span>
-          all projects
-        </a>
-
-        <div class="info-block">
-          <span class="block-label">
-            <span class="prefix">// project_name</span>
-          </span>
-          <h2 id="project-name">SleeveSanctum</h2>
-        </div>
-
-        <div class="info-block">
-          <span class="block-label">
-            <span class="prefix">// project_description</span>
-          </span>
-          <p id="project-desc">
-            <span class="prefix">&rArr;</span>
-            SleeveSanctum is a static webpage built around jQuery-driven form
-            submission.
-            <br />
-            <span class="prefix">&rArr;</span>
-            It functions as a record sleeve management tool — a simple interface
-            for cataloging and handling vinyl sleeve records with clean,
-            client-side form handling.
+      <main class="detail-main">
+      <div class="detail-grid" id="detail-root">
+        <aside class="detail-info">
+          <p class="subject-line subject-line-desktop">
+            <span class="prefix">// Note:</span>
+            <span class="p-note">
+              Click "Projects" in the nav above to return to the full project
+              list.
+            </span>
           </p>
-        </div>
+          <p class="subject-line subject-line-mobile">
+            <span class="prefix">// Note:</span>
+            <span class="p-note">
+              Click the monster to return to the project screen.
+            </span>
+          </p>
 
-        <div class="info-block">
-          <span class="block-label">
-            <span class="prefix">// tech_stack</span>
-          </span>
-          <div class="stack-tags" id="project-stack">
-            <span class="prefix">&bbrktbrk;</span>
-            JavaScript
-            <span class="prefix">&bbrktbrk;</span>
-            jQuery
-            <span class="prefix">&bbrktbrk;</span>
-            HTML
-            <span class="prefix">&bbrktbrk;</span>
-            CSS
+          <div class="info-block">
+            <span class="block-label">
+              <span class="prefix">// Project_Name</span>
+            </span>
+            <h1 id="project-name" class="accent-b">SleeveSanctum</h1>
           </div>
-        </div>
 
-        <div class="info-block">
-          <span class="block-label">
-            <span class="prefix">// github_link</span>
+          <div class="info-block">
+            <span class="block-label">
+              <span class="prefix">// Project_Description</span>
+            </span>
+            <p id="project-desc">
+              <span class="prefix">&rArr;</span>
+              SleeveSanctum is a static webpage built around jQuery-driven form
+              submission.
+              <br />
+              <span class="prefix">&rArr;</span>
+              The page mimics a professional business that specializes in
+              trading card game sleeves.
+              <br />
+              <span class="prefix">&rArr;</span>
+              The website also has a number guessing game and a form to submit
+              user information.
+            </p>
+          </div>
+
+          <div class="info-block">
+            <span class="block-label">
+              <span class="prefix">// Tech_Stack</span>
+            </span>
+            <div class="stack-tags" id="project-stack">
+              <span class="stack-tag">
+                <span class="prefix">⌭</span>
+                JavaScript
+              </span>
+              <span class="stack-tag">
+                <span class="prefix">⌭</span>
+                jQuery
+              </span>
+              <span class="stack-tag">
+                <span class="prefix">⌭</span>
+                HTML
+              </span>
+              <span class="stack-tag">
+                <span class="prefix">⌭</span>
+                CSS
+              </span>
+            </div>
+          </div>
+
+          <div class="info-block">
+            <span class="block-label">
+              <span class="prefix">// Live_Site</span>
+            </span>
+            <a
+              href="https://ventura-christian.github.io/SleeveSanctum/"
+              target="_blank"
+              class="live-link accent-b"
+              id="project-live-url"
+              aria-label="visit the live sleevesanctum project (https://ventura-christian.github.io/SleeveSanctum/)"
+            >
+              <span class="github-link-label">
+                Click_Here_To_Visit_Site
+                <span class="github-link-arrow" aria-hidden="true">↗</span>
+              </span>
+            </a>
+          </div>
+
+          <div class="info-block">
+            <span class="block-label">
+              <span class="prefix">// GitHub_Link</span>
+            </span>
+            <a
+              href="https://github.com/ventura-christian/SleeveSanctum"
+              class="github-link accent-b"
+              id="project-github"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="view the sleevesanctum source code on GitHub (opens in a new tab)"
+            >
+              <img
+                src="assets/svg-images/logos/github-b.svg"
+                alt="hand drawn svg image of the github cat logo"
+              />
+              <span class="github-link-label">
+                VIEW_ON_GITHUB
+                <span class="github-link-arrow" aria-hidden="true">↗</span>
+              </span>
+            </a>
+          </div>
+        </aside>
+
+        <section class="detail-images">
+          <span class="graffiti gfx-detail-1" aria-hidden="true">
+            <img src="assets/svg-images/scribbles/scribble-03.svg" alt="" />
           </span>
-          <a
-            href="https://github.com/ventura-christian/SleeveSanctum"
-            class="github-link"
-            id="project-github"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            click_me
-          </a>
-        </div>
-      </aside>
-    </div>
+          <span class="graffiti gfx-detail-2" aria-hidden="true">
+            <img src="assets/svg-images/character/character-02.svg" alt="" />
+          </span>
+          <span class="graffiti gfx-detail-3" aria-hidden="true">
+            <img src="assets/svg-images/character/character-3.svg" alt="" />
+          </span>
+
+          <div class="detail-photo face-frame tint-b hover-swap" tabindex="0">
+            <div class="frame-inner">
+              <img
+                src="assets/images/headshot/christian.jpg"
+                alt="christian ventura wearing black shirt in front of light background"
+                class="u-photo photo-default"
+              />
+              <img
+                src="assets/images/headshot/chin-upsidedown.jpg"
+                alt="christian ventura upside down wearing pink round sunglasses"
+                class="u-photo photo-hover"
+                aria-hidden="true"
+              />
+            </div>
+            <span class="tape tape-left" aria-hidden="true"></span>
+            <span class="tape tape-right" aria-hidden="true"></span>
+          </div>
+
+          <span class="images-label meta-tag">
+            <span class="prefix">//</span>
+            PROJECT_SCREENSHOTS
+          </span>
+
+          <div id="image-stack">
+            <div class="detail-img-frame carousel">
+              <img
+                src="assets/images/sleevesanctum/sleeve-hero.png"
+                alt="sleevesanctum landing page"
+                class="carousel-slide"
+                style="animation-delay: 0s"
+              />
+              <img
+                src="assets/images/sleevesanctum/sleeve-about.png"
+                alt="sleevesanctum about section"
+                class="carousel-slide"
+                style="animation-delay: 2.6s"
+              />
+              <img
+                src="assets/images/sleevesanctum/sleeve-form.png"
+                alt="sleevesanctum record cataloging form"
+                class="carousel-slide"
+                style="animation-delay: 5.2s"
+              />
+              <img
+                src="assets/images/sleevesanctum/sleeve-carousel.png"
+                alt="sleevesanctum built-in carousel feature"
+                class="carousel-slide"
+                style="animation-delay: 7.8s"
+              />
+              <img
+                src="assets/images/sleevesanctum/sleeve-game.png"
+                alt="sleevesanctum game feature"
+                class="carousel-slide"
+                style="animation-delay: 10.4s"
+              />
+            </div>
+          </div>
+        </section>
+      </div>
+      </main>
 
       <footer class="site-footer">
-        <span class="prefix">//</span> copyright c_ventura 2026
+        <span class="prefix">//</span>
+        copyright c_ventura 2026
       </footer>
     </div>
   </body>
