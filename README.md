@@ -2,7 +2,7 @@
 
 Built with HTML and CSS. No JavaScript, no build step.
 
-[Live Demo -> CLICK ME](christianventura.org)
+[Live Demo -> CLICK ME](https://christianventura.org)
 
 ## What This Is
 
